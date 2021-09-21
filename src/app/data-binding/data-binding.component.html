@@ -1,5 +1,5 @@
-<section class="property-binding">
-    <!-- <article>
+<!-- <section class="property-binding">
+     <article>
         <h3>Interpolation / Interpolação</h3>
         <p>String renderizada com interpolação: {{ url }}</p>
         <p>Resultado de 1 + 1 é {{ 1 + 1 }}</p>
@@ -17,7 +17,7 @@
             e dentro das aspas pode colocar um método ou atributo
         -->
     <!-- <a [href]='linkGoogle' target="_blank" >Google</a>
-    </article> -->
+    </article> 
 
     <article>
         <h3>Class e Style Binding</h3>
@@ -69,9 +69,44 @@
         </div>
     </article>
 
-    <!-- <button type="button" class="btn btn-primary"
+    <button type="button" class="btn btn-primary"
         tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
     Simple demo
-    </button> -->
+    </button>
 
+</section> -->
+
+<section class="event-binding">
+
+    <article>
+        <h3>Event binding</h3>
+
+        <div>
+            <button (click)="botaoClicado()" 
+                class="btn btn-primary">Me clique</button>
+
+            <br><br>
+
+            <input type="text"
+                (keyup)="onKeyUp($event)"
+                >
+            
+            <br>
+            <input type="text" #myInput 
+                (keyup.enter)="salvarValor(myInput.value)"
+                (blur)="salvarValor(myInput.value)">
+
+            <!-- Property binding -->
+            <p>Valor atual: {{ valorAtual }}</p>
+            <p>Valor salvo: {{ valorSalvo }}</p>
+
+            <br>
+            <span
+                (mouseover)="onMouseOverOut()"
+                (mouseout)="onMouseOverOut()"
+                [class.highlight]="isMouseOver">
+                Passe o mouse sobre mim
+            </span>
+        </div>
+    </article>
 </section>
